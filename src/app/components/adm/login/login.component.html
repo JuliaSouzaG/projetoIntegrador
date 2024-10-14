@@ -1,18 +1,22 @@
 <main class="tudo row">
-    <div class="bloco1 d-none d-lg-block col-6">
-      <div class="containerMsg">
+    <div class="bloco1 d-none d-lg-block col-8" id="blocoImg">
+      <!-- <div class="containerMsg">
         <div class="blocoMsg">
             <h1>Bem-vindo ao Guia Virtual!</h1>
         </div>
-      </div>
+      </div> -->
     </div>
-    <div class="centro col-12 col-lg-6">
+    <div class="centro col-12 col-lg-4">
         <div class="col-8">
-            <h1 class="mb-5">Login</h1>
+            <h2 class="text-center mb-5">Guia Virtual</h2>
+            <h1 class="mb-4 loginTxt">Login</h1>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label for="user">E-mail</label>
                     <input type="email" id="user" class="form-control" formControlName="email">
+                    @if (form.get('email')?.errors?.['email'] && form.get('email')?.touched) {
+                      <span>Insira um e-mail válido.</span>
+                    }
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>

@@ -3,8 +3,11 @@
 }
 
 .bloco1 {
-    background-color: #143908;
     color: white;
+    background-image: url(../../../../assets/img/background1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .centro {
@@ -32,4 +35,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.loginTxt {
+  font-size: 25px;
+}
+
+span {
+  font-size: 13px;
+  color: rgb(151, 0, 0);
 }
