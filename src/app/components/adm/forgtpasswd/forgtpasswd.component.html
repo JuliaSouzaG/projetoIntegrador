@@ -1,5 +1,5 @@
-<main>
-    <div class="col-4">
+<main class="px-3">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
         <div class="mb-3">
             <a routerLink="/login"><i class="bi bi-chevron-left"></i>   Voltar</a>
         </div>
@@ -8,12 +8,15 @@
             <div>
                 <p>Informe seu e-mail e então enviaremos um link para a redefinição da sua senha.</p>
             </div>
-            <form>
-                <div class="mb-3">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-4">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control">
+                    <input type="email" class="form-control" formControlName="email">
+                    @if (form.get('email')?.errors?.['email'] && form.get('email')?.touched) {
+                      <span>Informe um e-mail válido.</span>
+                    }
                 </div>
-                <button class="btn btn-primary">Enviar Link</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Enviar Link</button>
             </form>
         </div>
     </div>

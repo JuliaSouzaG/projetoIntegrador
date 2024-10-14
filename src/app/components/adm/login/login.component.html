@@ -1,10 +1,12 @@
 <main class="tudo row">
-    <div class="bloco1 centro col-6">
+    <div class="bloco1 d-none d-lg-block col-6">
+      <div class="containerMsg">
         <div class="blocoMsg">
             <h1>Bem-vindo ao Guia Virtual!</h1>
         </div>
+      </div>
     </div>
-    <div class="centro col-6">
+    <div class="centro col-12 col-lg-6">
         <div class="col-8">
             <h1 class="mb-5">Login</h1>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
