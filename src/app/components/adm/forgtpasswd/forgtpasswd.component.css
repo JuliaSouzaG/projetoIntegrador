@@ -1,0 +1,35 @@
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+i {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    width: 100%;
+}
+
+p {
+    color: rgb(88, 88, 88);
+    margin-bottom: 4%;
+}
+
+.box {
+    padding: 4%;
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: rgb(213, 213, 213);
+}
