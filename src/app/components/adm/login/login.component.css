@@ -4,7 +4,7 @@
 
 .bloco1 {
     color: white;
-    background-image: url(../../../../assets/img/background1.jpeg);
+    background-image: url(../../../../assets/img/background2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -44,4 +44,8 @@ button {
 span {
   font-size: 13px;
   color: rgb(151, 0, 0);
+}
+
+.logo {
+  width: 200px;
 }
