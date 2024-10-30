@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-body, html {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
     height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

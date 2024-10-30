@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadstroadmComponent } from './cadstroadm.component';
+import { CustomSidebarComponent } from './custom-sidebar.component';
 
-describe('CadstroadmComponent', () => {
-  let component: CadstroadmComponent;
-  let fixture: ComponentFixture<CadstroadmComponent>;
+describe('CustomSidebarComponent', () => {
+  let component: CustomSidebarComponent;
+  let fixture: ComponentFixture<CustomSidebarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CadstroadmComponent]
+      imports: [CustomSidebarComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CadstroadmComponent);
+    fixture = TestBed.createComponent(CustomSidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
