@@ -1,31 +1,41 @@
-<h1>Usuários cadastrados</h1>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <button mat-mini-fab class="me-2 mat-fab"><mat-icon>supervisor_account</mat-icon></button>
+    </div>
+    <span class="user">Usuários cadastrados</span>
+  </div>
+  <button mat-fab extended class="mat-fab" (click)="openCadDialog()"><mat-icon>add</mat-icon>Novo Usuário</button>
+</div>
+
+<div class="mb-3">
+  <div class="d-flex justify-content-between align-items-center inpt" style="width: 400px">
+    <mat-icon class="me-1">search</mat-icon>
+    <input type="text" placeholder="Buscar...">
+  </div>
+</div>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
-      <th scope="col">CPF</th>
-      <th scope="col">Handle</th>
+      <th scope="col">E-mail</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
+    @for(u of usuarios; track u.id) {
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>mdo</td>
+      <th scope="row">{{u.id}}</th>
+      <td>{{u.nome}}</td>
+      <td>{{u.email}}</td>
+      <td>
+        <button mat-icon-button (click)="openEditDialog(u)" class="me-3"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button><mat-icon>delete_outline</mat-icon></button>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>twitter</td>
-    </tr>
+    }
   </tbody>
 </table>
+

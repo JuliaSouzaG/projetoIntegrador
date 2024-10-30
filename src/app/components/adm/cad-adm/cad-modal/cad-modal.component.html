@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Cadastrar novo usuário</h2>
+<mat-dialog-content>
+  <div class="row">
+    <div class="mb-3 col-12">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome">
+    </div>
+    <div class="mb-3 col-12">
+      <label for="nome" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="nome">
+    </div>
+    <div class="mb-3 col-6">
+      <label for="nome" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="nome">
+    </div>
+    <div class="mb-3 col-6">
+      <label for="nome" class="form-label">Confirmar senha</label>
+      <input type="password" class="form-control" id="nome">
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">Cancelar</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-flat-button color="primary" [mat-dialog-close]>Salvar</button>
+</mat-dialog-actions>

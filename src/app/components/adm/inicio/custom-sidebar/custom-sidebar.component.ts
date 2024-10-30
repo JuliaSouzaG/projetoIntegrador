@@ -27,17 +27,24 @@ export class CustomSidebarComponent {
     {
       icon: 'map',
       label: 'Local',
-      route: '../inicio'
+      route: 'local'
     },
     {
       icon: 'place',
       label: 'Ponto',
-      route: '../inicio'
+      route: 'ponto'
     },
     {
       icon: 'supervisor_account',
       label: 'Gerenciar Usuários',
       route: 'cadastrar-administrador'
     },
+    {
+      icon: 'person',
+      label: 'Meu Perfil',
+      route: 'meu-perfil'
+    },
   ])
+
+
 }

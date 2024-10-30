@@ -6,3 +6,18 @@
 img {
     margin-bottom: 10px;
 }
+
+.menu-item{
+  border-left: 5px solid;
+  border-left-color: rgba(0, 0, 0, 0);
+  color: rgb(1, 1, 68);
+}
+
+.selected-menu-item {
+  border-left-color: rgb(1, 1, 68);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+:host * {
+  transition: all 500ms ease-in-out;
+}

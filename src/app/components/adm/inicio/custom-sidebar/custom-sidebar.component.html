@@ -2,7 +2,14 @@
     <img src="../../../../../assets/img/logo.svg" alt="Logo Guia Virtual">
 </div>
 <mat-nav-list>
-    <a mat-list-item *ngFor="let item of menuItems()" [routerLink]="item.route">
+    <a
+    mat-list-item
+    class="menu-item"
+    *ngFor="let item of menuItems()"
+    [routerLink]="item.route"
+    routerLinkActive="selected-menu-item"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive">
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
         <span matListItemTitle>{{ item.label }}</span>
     </a>
