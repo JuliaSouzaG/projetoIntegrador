@@ -1,15 +1,17 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-edit-modal',
+  selector: 'app-delet-modal',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-  templateUrl: './edit-modal.component.html',
-  styleUrls: ['./edit-modal.component.css']
+  imports: [MatDialogModule, MatButtonModule, MatIconModule],
+  templateUrl: './delet-modal.component.html',
+  styleUrl: './delet-modal.component.css'
 })
-export class EditModalComponent {
+export class DeletModalComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+
 }

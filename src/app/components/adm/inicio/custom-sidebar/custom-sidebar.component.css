@@ -1,3 +1,7 @@
+:host * {
+  transition: all 500ms ease-in-out;
+}
+
 .sidenav-header {
     padding-top: 24px;
     text-align: center;
@@ -7,17 +11,23 @@ img {
     margin-bottom: 10px;
 }
 
-.menu-item{
+.menu-item {
   border-left: 5px solid;
   border-left-color: rgba(0, 0, 0, 0);
-  color: rgb(1, 1, 68);
 }
 
 .selected-menu-item {
   border-left-color: rgb(1, 1, 68);
+}
+
+.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated  {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-:host * {
-  transition: all 500ms ease-in-out;
+.mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated.mdc-list-item--with-leading-icon .mdc-list-item__start {
+  color: rgb(1, 1, 68);
+}
+
+.mat-mdc-list-base.mat-mdc-list-base .mdc-list-item--activated .mdc-list-item__primary-text {
+  color: rgb(1, 1, 68);
 }

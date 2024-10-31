@@ -4,13 +4,13 @@
 <mat-nav-list>
     <a
     mat-list-item
-    class="menu-item"
     *ngFor="let item of menuItems()"
+    class="menu-item"
     [routerLink]="item.route"
     routerLinkActive="selected-menu-item"
     #rla="routerLinkActive"
     [activated]="rla.isActive">
-        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-symbols-outlined'" matListItemIcon>{{ item.icon }}</mat-icon>
         <span matListItemTitle>{{ item.label }}</span>
     </a>
 </mat-nav-list>

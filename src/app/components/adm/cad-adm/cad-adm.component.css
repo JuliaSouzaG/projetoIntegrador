@@ -1,5 +1,6 @@
 .mat-fab {
   background-color: rgb(1, 1, 68);
+  box-shadow: none;
 }
 
 .user {
@@ -16,8 +17,12 @@ input {
 }
 
 .inpt {
-  border: solid 1px rgb(1, 1, 68);
+  border: solid 1.5px rgba(1, 1, 68, 0.318);
   padding: 5px;
   border-radius: 10px;
   background-color: white;
+}
+
+table {
+  box-shadow: none;
 }

@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Cadastrar novo usuário</h2>
+<h2 mat-dialog-title>Cadastrar Novo Usuário</h2>
 <mat-dialog-content>
   <div class="row">
     <div class="mb-3 col-12">
@@ -6,20 +6,20 @@
       <input type="text" class="form-control" id="nome">
     </div>
     <div class="mb-3 col-12">
-      <label for="nome" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="nome">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="email">
     </div>
     <div class="mb-3 col-6">
-      <label for="nome" class="form-label">Senha</label>
-      <input type="password" class="form-control" id="nome">
+      <label for="senha" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="senha">
     </div>
     <div class="mb-3 col-6">
-      <label for="nome" class="form-label">Confirmar senha</label>
-      <input type="password" class="form-control" id="nome">
+      <label for="conf_senha" class="form-label">Confirmar senha</label>
+      <input type="password" class="form-control" id="conf_senha">
     </div>
   </div>
 </mat-dialog-content>
-<mat-dialog-actions>
+<mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
     <button mat-raised-button color="primary" [mat-dialog-close]="true">Cancelar</button>
     <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
     <button mat-flat-button color="primary" [mat-dialog-close]>Salvar</button>
