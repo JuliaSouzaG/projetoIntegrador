@@ -1,3 +1,7 @@
 button {
     border-radius: 24px;  
 }
+
+.mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: #198754;
+}
