@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Cadastrar novo local</h2>
+<mat-dialog-content>
+  <div class="row">
+    <div class="mb-3 col-12">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome">
+    </div>
+    <div class="mb-3 col-12">
+      <label for="descricao" class="form-label">Descrição</label>
+      <input type="descricao" class="form-control" id="descricao">
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
+    <button mat-flat-button color="basic" [mat-dialog-close]="true">Cancelar</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-raised-button color="accent" [mat-dialog-close]>Salvar</button>
+</mat-dialog-actions>

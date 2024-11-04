@@ -6,6 +6,7 @@ import { MeuPerfilComponent } from './components/adm/meu-perfil/meu-perfil.compo
 import { InicioComponent } from './components/adm/inicio/inicio.component';
 import { CadLocalComponent } from './components/adm/cad-local/cad-local.component';
 import { CadPontoComponent } from './components/adm/cad-ponto/cad-ponto.component';
+import { MapComponent } from './components/adm/map/map.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent, title: 'Login de Usuário' },
@@ -14,8 +15,9 @@ export const routes: Routes = [
         children: [
             { path: 'cadastrar-administrador', component: CadAdmComponent},
             { path: 'meu-perfil', component: MeuPerfilComponent},
-            { path: 'local', component: CadLocalComponent},
-            { path: 'ponto', component: CadPontoComponent},
+            { path: 'local', component: CadLocalComponent },
+            { path: 'ponto', component: CadPontoComponent },
+            { path: 'mapa', component: MapComponent },
         ]
      },
     { path: '', redirectTo: 'login', pathMatch: 'full' },

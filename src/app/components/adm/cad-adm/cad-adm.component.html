@@ -15,30 +15,6 @@
   </div>
 </div>
 
-<!-- <table>
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">E-mail</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    @for(u of usuarios; track u.id) {
-    <tr>
-      <th scope="row">{{u.id}}</th>
-      <td>{{u.nome}}</td>
-      <td>{{u.email}}</td>
-      <td>
-        <button mat-icon-button (click)="openEditDialog(u)" class="me-3"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button (click)="openDeletDialog(u)"><mat-icon>delete_outline</mat-icon></button>
-      </td>
-    </tr>
-    }
-  </tbody>
-</table> -->
-
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 teste">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>

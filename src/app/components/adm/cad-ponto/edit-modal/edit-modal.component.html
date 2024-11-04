@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{ data.ponto.nome }}</h2>
+<mat-dialog-content>
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" [value]="data.ponto.nome">
+  </div>
+  <div class="mb-3 col-12">
+    <label for="imagem" class="form-label">Imagem</label>
+    <input type="file" class="form-control" id="imagem" [value]="data.ponto.imagem">
+</div>
+<div class="mb-3 col-12">
+    <label for="audio" class="form-label">Áudio</label>
+    <input type="file" class="form-control" id="audio" [value]="data.ponto.audio">
+</div>
+<div class="mb-3 col-12">
+    <label for="texto" class="form-label">Texto</label>
+    <textarea name="texto" id="texto" class="form-control" [value]="data.ponto.texto"></textarea>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
+  <button mat-flat-button [mat-dialog-close]="true" class="mat-raised-button">Cancelar</button>
+  <button mat-raised-button color="accent" [mat-dialog-close]>Salvar Alterações</button>
+</mat-dialog-actions>

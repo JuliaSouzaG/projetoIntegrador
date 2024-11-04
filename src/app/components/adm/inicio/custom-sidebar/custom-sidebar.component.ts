@@ -30,9 +30,9 @@ export class CustomSidebarComponent {
       route: 'local'
     },
     {
-      icon: 'place',
-      label: 'Ponto',
-      route: 'ponto'
+      icon: 'map',
+      label: 'Mapa',
+      route: 'mapa'
     },
     {
       icon: 'supervisor_account',
