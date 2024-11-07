@@ -15,15 +15,15 @@ const pontos: Ponto[] = [
    id: 1,
    nome: "Sala 1",
    imagem: "Img1",
-   audio: "",
-   texto: ""
+   audio: "audio1",
+   texto: "Lore Ipson"
   },
   {
    id: 2,
    nome: "Auditorio",
-   imagem: "faculdade",
-   audio: "",
-   texto: ""
+   imagem: "Img2",
+   audio: "audio2",
+   texto: "Lore Ipson"
   }
  ]
 

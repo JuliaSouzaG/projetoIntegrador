@@ -29,11 +29,11 @@ export class CustomSidebarComponent {
       label: 'Local',
       route: 'local'
     },
-    {
-      icon: 'map',
-      label: 'Mapa',
-      route: 'mapa'
-    },
+    // {
+    //   icon: 'map',
+    //   label: 'Mapa',
+    //   route: 'mapa'
+    // },
     {
       icon: 'supervisor_account',
       label: 'Gerenciar Usuários',

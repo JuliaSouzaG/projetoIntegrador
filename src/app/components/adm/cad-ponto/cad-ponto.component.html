@@ -8,18 +8,18 @@
     <button mat-fab extended class="mat-fab" (click)="openCadDialog()"><mat-icon>add</mat-icon>Novo Ponto</button>
   </div>
 
-  <!-- <div class="mb-3 local p-3">
-    <div>Local: {{ nome }}</div>
-    <div>Descricao: {{ descricao }}</div>
-  </div> -->
-  
+  <div class="mb-3 local p-3">
+    <div><span>Local:</span> {{ nome }}</div>
+    <div><span>Descrição:</span> {{ descricao }}</div>
+  </div>
+
   <div class="mb-3">
     <div class="d-flex justify-content-between align-items-center inpt" style="width: 400px">
       <mat-icon class="me-1">search</mat-icon>
       <input type="text" placeholder="Buscar...">
     </div>
   </div>
-  
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-hover">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
