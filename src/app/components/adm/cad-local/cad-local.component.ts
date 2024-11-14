@@ -9,6 +9,7 @@ import { RouterLink } from '@angular/router';
 import { CadModalComponent } from './cad-modal/cad-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { DeletModalComponent } from './delet-modal/delet-modal.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 const locais: Local[] = [
   {
@@ -36,6 +37,7 @@ const locais: Local[] = [
     RouterLink,
     CadModalComponent,
     EditModalComponent,
+    MatMenuModule,
     DeletModalComponent
   ],
   templateUrl: './cad-local.component.html',

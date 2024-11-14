@@ -1,30 +1,100 @@
+table {
+  width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+  table-layout: fixed; /* Garante que a largura das colunas se ajuste bem */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+}
+
+.mat-header-cell, .mat-cell {
+  text-align: left;
+  white-space: nowrap;
+}
+
+
 .mat-fab {
-    background-color: rgb(1, 1, 68);
-    box-shadow: none;
-  }
-  
+  background-color: rgb(1, 1, 68);
+  box-shadow: none;
+}
+
+.user {
+  font-size: 25px;
+  color: rgb(1, 1, 68);
+  font-weight: 500;
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+}
+
+.inpt {
+  border: solid 1.5px rgba(1, 1, 68, 0.318);
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  width: 400px;
+}
+
+table {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+}
+
+
+@media (max-width: 700px) {
+
+  /* Ajusta o tamanho da fonte nas telas menores */
   .user {
-    font-size: 25px;
-    color: rgb(1, 1, 68);
-    font-weight: 500;
+    font-size: 16px;
   }
-  
-  input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 15px;
-  }
-  
-  .inpt {
-    border: solid 1.5px rgba(1, 1, 68, 0.318);
-    padding: 5px;
-    border-radius: 10px;
-    background-color: white;
-  }
-  
+
+  /* Reduz o tamanho da fonte da tabela */
   table {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+    font-size: 5px;
   }
+
+  .mat-fab-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mat-fab-btn {
+    width: 110px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+}
+
+/* Aumenta o espaçamento da tabela em telas maiores */
+@media (min-width: 701px) {
+  table {
+    margin: 20px 0;
+  }
+}
+
+.menu {
+  display: none; /* Esconde o menu por padrão */
+}
+
+.acoes {
+  display: block; /* Exibe a seção de ações por padrão */
+}
+
+/* Estilo para telas menores que 700px */
+@media (max-width: 700px) {
+  .acoes {
+    display: none; /* Esconde as ações */
+  }
+
+  .menu {
+    display: block; /* Exibe o menu em telas pequenas */
+  }
+}
   
+@media (max-width: 700px) {
+  .inpt {
+    width: 300px;
+  }
+}
 

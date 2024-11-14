@@ -1,7 +1,27 @@
 .content {
-    padding: 70px;
+    padding: 40px;
+}
+
+@media (max-width: 700px) {
+    .content {
+        padding: 10px;
+    }
 }
 
 mat-sidenav-container {
     height: 100vh;
+}
+
+mat-toolbar {
+    position: relative;
+    z-index: 5;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 64px);
+}
+
+mat-sidenav,
+mat-sidenav-content {
+    transition: all 500ms ease-in-out;
 }

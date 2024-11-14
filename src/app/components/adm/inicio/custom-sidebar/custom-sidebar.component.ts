@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, Input, signal } from '@angular/core';
 import { MatListModule } from '@angular/material/list'
 import { MatIconModule } from '@angular/material/icon'
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 export type MenuItems = {
@@ -23,6 +23,11 @@ export type MenuItems = {
   styleUrl: './custom-sidebar.component.css'
 })
 export class CustomSidebarComponent {
+  sidenavCollapsed = signal(false)
+  @Input() set collapsed(val: boolean) {
+    this.sidenavCollapsed.set(val)
+  }
+
   menuItems = signal<MenuItems[]>([
     {
       icon: 'map',
@@ -46,5 +51,6 @@ export class CustomSidebarComponent {
     },
   ])
 
+  profilePicSize = computed(() => this.sidenavCollapsed() ? '53' : '100')
 
 }
