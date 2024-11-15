@@ -19,3 +19,13 @@ button {
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
 }
+
+.inpt {
+    width: 400px;
+}
+
+@media (max-width: 700px) {
+    .inpt {
+      width: 200px;
+    }
+  }

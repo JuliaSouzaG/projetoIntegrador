@@ -7,6 +7,7 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { CadModalComponent } from './cad-modal/cad-modal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
 import { DeletModalComponent } from './delet-modal/delet-modal.component';
 
 const usuarios: Usuario[] = [
@@ -35,6 +36,7 @@ const usuarios: Usuario[] = [
     MatButtonModule, 
     CadModalComponent, 
     DeletModalComponent, 
+    MatMenuModule,
     MatTableModule],
   templateUrl: './cad-adm.component.html',
   styleUrl: './cad-adm.component.css'

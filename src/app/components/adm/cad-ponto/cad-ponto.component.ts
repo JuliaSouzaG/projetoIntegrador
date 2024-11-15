@@ -9,6 +9,7 @@ import { Ponto } from '../../../model/ponto';
 import { CadModalComponent } from './cad-modal/cad-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { DeletModalComponent } from './delet-modal/delet-modal.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 const pontos: Ponto[] = [
   {
@@ -39,6 +40,7 @@ const pontos: Ponto[] = [
     MatTableModule,
     CadModalComponent,
     EditModalComponent,
+    MatMenuModule,
     DeletModalComponent,
   ],
   templateUrl: './cad-ponto.component.html',

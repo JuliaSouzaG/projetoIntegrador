@@ -1,12 +1,11 @@
 table {
-  width: 100%; /* Faz a tabela ocupar toda a largura disponível */
-  table-layout: fixed; /* Garante que a largura das colunas se ajuste bem */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+  width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+  table-layout: auto; /* Garante que a largura das colunas se ajuste bem */
 }
 
 .mat-header-cell, .mat-cell {
   text-align: left;
-  white-space: nowrap;
 }
 
 
@@ -40,7 +39,6 @@ table {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
 }
 
-
 @media (max-width: 700px) {
 
   /* Ajusta o tamanho da fonte nas telas menores */
@@ -49,8 +47,8 @@ table {
   }
 
   /* Reduz o tamanho da fonte da tabela */
-  table {
-    font-size: 5px;
+  td, th {
+    font-size: 10px;
   }
 
   .mat-fab-icon {
@@ -66,19 +64,32 @@ table {
 
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.tabela {
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.menu {
+  display: none; /* Esconde o menu por padrão */
+  > button {
+    font-size: 8px;
+    width: 40px;
+  }
+}
+
+.acoes {
+  display: block; /* Exibe a seção de ações por padrão */
+}
+
 /* Aumenta o espaçamento da tabela em telas maiores */
 @media (min-width: 701px) {
   table {
     margin: 20px 0;
   }
-}
-
-.menu {
-  display: none; /* Esconde o menu por padrão */
-}
-
-.acoes {
-  display: block; /* Exibe a seção de ações por padrão */
 }
 
 /* Estilo para telas menores que 700px */

@@ -1,3 +1,13 @@
+table {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+  width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+  table-layout: auto; /* Garante que a largura das colunas se ajuste bem */
+}
+
+.mat-header-cell, .mat-cell {
+  text-align: left;
+}
+
 .mat-fab {
     background-color: rgb(1, 1, 68);
     box-shadow: none;
@@ -21,6 +31,7 @@
     padding: 5px;
     border-radius: 10px;
     background-color: white;
+    width: 400px;
   }
 
   table {
@@ -38,3 +49,75 @@
       font-weight: 500;
     }
   }
+
+  @media (max-width: 700px) {
+
+    /* Ajusta o tamanho da fonte nas telas menores */
+    .user {
+      font-size: 16px;
+    }
+  
+    /* Reduz o tamanho da fonte da tabela */
+    td, th {
+      font-size: 12px;
+    }
+  
+    .mat-fab-icon {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .mat-fab-btn {
+      width: 120px;
+      height: 40px;
+      font-size: 12px;
+    }
+  
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .tabela {
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  .menu {
+    display: none; /* Esconde o menu por padrão */
+    > button {
+      font-size: 12px;
+      width: 90px;
+    }
+  }
+  
+  .acoes {
+    display: block; /* Exibe a seção de ações por padrão */
+  }
+  
+  /* Aumenta o espaçamento da tabela em telas maiores */
+  @media (min-width: 701px) {
+    table {
+      margin: 20px 0;
+    }
+  }
+  
+  /* Estilo para telas menores que 700px */
+  @media (max-width: 700px) {
+    .acoes {
+      display: none; /* Esconde as ações */
+    }
+  
+    .menu {
+      display: block; /* Exibe o menu em telas pequenas */
+    }
+  }
+    
+  @media (max-width: 700px) {
+    .inpt {
+      width: 300px;
+    }
+  }
+  
+  
