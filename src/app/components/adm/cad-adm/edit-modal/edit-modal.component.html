@@ -1,19 +1,21 @@
-<h2 mat-dialog-title>{{ data.user.nome }}</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<h2 mat-dialog-title>{{ data.user.nomeUsuario }}</h2>
 <mat-dialog-content>
   <div class="mb-3">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" [value]="data.user.nome">
+    <input type="text" class="form-control" id="nomeUsuario"  formControlName="nomeUsuario">
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">E-mail</label>
-    <input type="email" class="form-control" id="email" [value]="data.user.email">
+    <input type="email" class="form-control" id="emailUsuario" [value]="data.user.emailUsuario" formControlName="emailUsuario">
   </div>
   <div class="mb-3">
     <label for="senha" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="senha" [value]="data.user.senha">
+    <input type="password" class="form-control" id="senhaUsuario" [value]="data.user.senhaUsuario" formControlName="senhaUsuario">
   </div>
 </mat-dialog-content>
 <mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
   <button mat-flat-button [mat-dialog-close]="true" class="mat-raised-button">Cancelar</button>
-  <button mat-raised-button color="accent" [mat-dialog-close]>Salvar Alterações</button>
+  <button type="submit" mat-raised-button color="accent">Salvar Alterações</button>
 </mat-dialog-actions>
+</form>

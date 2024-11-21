@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,24 +10,7 @@ import { CadModalComponent } from './cad-modal/cad-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { DeletModalComponent } from './delet-modal/delet-modal.component';
 import { MatMenuModule } from '@angular/material/menu';
-
-const pontos: Ponto[] = [
-  {
-   id: 1,
-   nome: "Sala 1",
-   imagem: "Img1",
-   audio: "audio1",
-   texto: "Lore Ipson"
-  },
-  {
-   id: 2,
-   nome: "Auditorio",
-   imagem: "Img2",
-   audio: "audio2",
-   texto: "Lore Ipson"
-  }
- ]
-
+import { PontoService } from '../../../service/ponto/ponto.service';
 
 @Component({
   selector: 'app-cad-ponto',
@@ -46,17 +29,27 @@ const pontos: Ponto[] = [
   templateUrl: './cad-ponto.component.html',
   styleUrl: './cad-ponto.component.css'
 })
-export class CadPontoComponent {
+export class CadPontoComponent implements OnInit {
 
   nome!: string;
   descricao!: string;
 
-  constructor(private route: ActivatedRoute, public dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, public dialog: MatDialog, private pontoService: PontoService) {
     this.route.queryParams.subscribe(params => {
       console.log(params['nome']);
       this.nome = params['nome'];
       this.descricao = params['descricao'];
     });
+  }
+
+  pontos!: Ponto[]
+  
+  ngOnInit(): void {
+    this.pontoService.listar().subscribe({
+      next: (data) => {
+        this.pontos = data.pontos
+      }
+    })
   }
 
   openEditDialog(ponto: Ponto) {
@@ -79,6 +72,5 @@ export class CadPontoComponent {
   }
 
    displayedColumns: string[] = ['id', 'nome', 'imagem', 'audio', 'texto', 'acoes'];
-   dataSource = pontos
 
 }

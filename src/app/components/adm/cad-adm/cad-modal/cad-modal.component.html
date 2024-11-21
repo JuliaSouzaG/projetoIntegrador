@@ -1,26 +1,26 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
 <h2 mat-dialog-title>Cadastrar Novo Usuário</h2>
-<mat-dialog-content>
-  <div class="row">
+<mat-dialog-content class="row">
     <div class="mb-3 col-12">
       <label for="nome" class="form-label">Nome</label>
-      <input type="text" class="form-control" id="nome">
+      <input type="text" class="form-control" id="nome" formControlName="nomeUsuario">
     </div>
     <div class="mb-3 col-12">
       <label for="email" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="email">
+      <input type="email" class="form-control" id="email" formControlName="emailUsuario">
     </div>
     <div class="mb-3 col-6">
       <label for="senha" class="form-label">Senha</label>
-      <input type="password" class="form-control" id="senha">
+      <input type="password" class="form-control" id="senha" formControlName="senhaUsuario">
     </div>
     <div class="mb-3 col-6">
       <label for="conf_senha" class="form-label">Confirmar senha</label>
       <input type="password" class="form-control" id="conf_senha">
     </div>
-  </div>
-</mat-dialog-content>
-<mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
+  </mat-dialog-content>
+  <mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
     <button mat-flat-button color="basic" [mat-dialog-close]="true">Cancelar</button>
     <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-    <button mat-raised-button color="accent" [mat-dialog-close]>Salvar</button>
-</mat-dialog-actions>
+    <button mat-raised-button color="accent" type="submit">Salvar</button>
+  </mat-dialog-actions>
+</form>

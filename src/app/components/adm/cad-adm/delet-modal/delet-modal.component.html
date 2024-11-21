@@ -1,10 +1,10 @@
 <div class="d-flex align-items-center mt-3" mat-dialog-title>
-  <mat-icon class="me-2">warning</mat-icon><span>Deletar usuário {{data.user.nome}}?</span>
+  <mat-icon class="me-2">warning</mat-icon><span>Deletar usuário {{data.user.nomeUsuario}}?</span>
 </div>
 <mat-dialog-content>
   A ação não poderá ser desfeita
 </mat-dialog-content>
 <mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
   <button mat-flat-button color="basic" [mat-dialog-close]="true">Cancelar</button>
-  <button mat-raised-button color="warn" [mat-dialog-close]>Deletar</button>
+  <button mat-raised-button color="warn" (click)="deletar(data.user.idUsuario)">Deletar</button>
 </mat-dialog-actions>

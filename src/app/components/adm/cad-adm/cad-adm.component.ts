@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Usuario } from '../../../model/Usuario';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -9,21 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { DeletModalComponent } from './delet-modal/delet-modal.component';
-
-const usuarios: Usuario[] = [
-  {
-   id: 1,
-   nome: "Pedro",
-   email: "pedro@hotmail.com",
-   senha: "123"
-  },
-  {
-   id: 2,
-   nome: "Manuela",
-   email: "manuela@hotmail.com",
-   senha: "321"
-  }
- ]
+import { UsuarioService } from '../../../service/usuario/usuario.service';
 
 @Component({
   selector: 'app-cad-adm',
@@ -42,9 +28,24 @@ const usuarios: Usuario[] = [
   styleUrl: './cad-adm.component.css'
 })
 
-export class CadAdmComponent {
+export class CadAdmComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private usuarioService: UsuarioService
+) {}
+
+usuarios!: Usuario[]
+
+ngOnInit(): void {
+
+  this.usuarioService.listar().subscribe({
+    next: (data) => {
+      this.usuarios = data.usuarios;
+    }
+  })
+
+}
 
   openEditDialog(user: Usuario) {
     this.dialog.open(EditModalComponent, {
@@ -65,12 +66,6 @@ export class CadAdmComponent {
     });
   }
 
-  id!: number;
-  nome!: string;
-  email!: string;
-  senha!: string;
-
    displayedColumns: string[] = ['id', 'nome', 'email', 'acoes'];
-   dataSource = usuarios
 
 }

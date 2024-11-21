@@ -1,6 +1,6 @@
 export interface Local {
     
-    id: number;
+    idlocal_visitacao: number;
 
     nome: string;
 
