@@ -33,22 +33,25 @@ export class CadPontoComponent implements OnInit {
 
   nome!: string;
   descricao!: string;
+  idlocal_visitacao!: number;
 
   constructor(private route: ActivatedRoute, public dialog: MatDialog, private pontoService: PontoService) {
     this.route.queryParams.subscribe(params => {
       console.log(params['nome']);
       this.nome = params['nome'];
       this.descricao = params['descricao'];
+      this.idlocal_visitacao = params['idlocal_visitacao'];
     });
   }
 
   pontos!: Ponto[]
   
   ngOnInit(): void {
-    this.pontoService.listar().subscribe({
+    this.pontoService.listar(this.idlocal_visitacao).subscribe({
       next: (data) => {
-        this.pontos = data.pontos
-      }
+        console.log(data)
+        this.pontos = data
+      } 
     })
   }
 

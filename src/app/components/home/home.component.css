@@ -1,0 +1,22 @@
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border: solid 1px rgb(199, 199, 199);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    margin: 2px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}

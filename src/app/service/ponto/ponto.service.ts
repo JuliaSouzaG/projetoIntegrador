@@ -12,11 +12,11 @@ export class PontoService {
 
   url = 'http://localhost:3000/pontos';
 
-  criar(usuario: Ponto): Observable<Ponto> {
-    return this.http.post<Ponto>(this.url + '/criar', usuario);
+  criar(ponto: Ponto): Observable<Ponto> {
+    return this.http.post<Ponto>(this.url + '/criar', ponto);
   }
 
-  listar(): Observable<any> {
+  listarTodos(): Observable<any> {
     return this.http.get<any>(this.url + '/listar');
   }
 
@@ -28,4 +28,8 @@ export class PontoService {
     return this.http.put<any>(this.url + `/alterar/${id}`, usuario);
   }
   
+  listar(id: number): Observable<any> {
+    return this.http.get<any>(this.url + `/buscarlocal/${id}`);
+  }
+
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   form!: FormGroup;
 
@@ -26,6 +26,7 @@ export class LoginComponent {
   onSubmit() {
     console.log(this.form.value)
     this.form.reset();
+    this.router.navigate(['/inicio/local'])
   }
 
 

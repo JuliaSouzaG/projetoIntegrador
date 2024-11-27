@@ -1,0 +1,44 @@
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    /* border: solid 1px rgb(199, 199, 199); */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+button {
+    width: 300px;
+    margin: 2px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    width: 400px;
+    border-radius: 5px;
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+p {
+    width: 400px;
+    text-align: justify;
+}
+
+.side {
+    display: flex;
+    justify-content: space-between;
+}

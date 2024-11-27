@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { PontoService } from '../../../../service/ponto/ponto.service';
 
 @Component({
   selector: 'app-delet-modal',
@@ -17,6 +18,14 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class DeletModalComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private pontoService: PontoService) { }
+
+  deletar(id: number) {
+    this.pontoService.deletar(id).subscribe({
+      next: () => {
+        location.reload()
+      }
+    })
+  }
   
 }

@@ -1,8 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CustomSidebarComponent } from './custom-sidebar/custom-sidebar.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
