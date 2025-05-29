@@ -1,25 +1,31 @@
-<h2 mat-dialog-title>Cadastrar novo ponto</h2>
-<mat-dialog-content>
-    <div class="row">
-        <div class="mb-3 col-12">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2 mat-dialog-title>Cadastrar novo ponto</h2>
+    <mat-dialog-content>
+        <div class="row">
+            <div class="mb-3 col-12">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" formControlName="nome">
+            </div>
+            <div class="mb-3 col-12">
+                <label for="imagem" class="form-label">Imagem</label>
+                <input type="file" class="form-control" id="imagem" (change)="onFileChange($event, 'image')">
+            </div>
+            <div class="mb-3 col-12">
+                <label for="imagem" class="form-label">Mapa</label>
+                <input type="file" class="form-control" id="imagem" (change)="onFileChange($event, 'mapa')">
+            </div>
+            <div class="mb-3 col-12">
+                <label for="audio" class="form-label">Áudio</label>
+                <input type="file" class="form-control" id="audio" (change)="onFileChange($event, 'audio')">
+            </div>
+            <div class="mb-3 col-12">
+                <label for="texto" class="form-label">Texto</label>
+                <textarea name="texto" id="texto" class="form-control" formControlName="texto"></textarea>
+            </div>
         </div>
-        <div class="mb-3 col-12">
-            <label for="imagem" class="form-label">Imagem</label>
-            <input type="file" class="form-control" id="imagem">
-        </div>
-        <div class="mb-3 col-12">
-            <label for="audio" class="form-label">Áudio</label>
-            <input type="file" class="form-control" id="audio">
-        </div>
-        <div class="mb-3 col-12">
-            <label for="texto" class="form-label">Texto</label>
-            <textarea name="texto" id="texto" class="form-control"></textarea>
-        </div>
-    </div>
-</mat-dialog-content>
-<mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
-    <button mat-flat-button color="basic" [mat-dialog-close]="true">Cancelar</button>
-    <button mat-raised-button color="accent" [mat-dialog-close]>Salvar</button>
-</mat-dialog-actions>
+    </mat-dialog-content>
+    <mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">
+        <button mat-flat-button color="basic" [mat-dialog-close]="true">Cancelar</button>
+        <button type="submit" mat-raised-button color="accent" [mat-dialog-close]>Salvar</button>
+    </mat-dialog-actions>
+</form>

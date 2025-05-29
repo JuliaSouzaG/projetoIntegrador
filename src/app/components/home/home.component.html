@@ -1,23 +1,37 @@
-<app-navbar></app-navbar>
-<div class="home">
-  <div class="box">
-    <div>
-      <input
-        type="search"
-        class="form-control mb-3 form-control-sm"
-        placeholder="Pesquisar por locais"
-      />
-    </div>
-    <div class="infos">
-      <div class="me-3">
-        <button>Senac</button>
-        <button>FAMETRO</button>
-        <button>INPA</button>
-        <button>MUSA</button>
+<div class="home d-flex align-items-center justify-content-center">
+  <!-- <div class="mt-5">
+    <h1 class="titulo">NAVEGUE POR TODOS OS LUGARES!</h1>
+    <p class="text-light text-center mb-3">
+      selecione o local para visitar seus pontos:
+    </p>
+  </div> -->
+  <div class="d-flex justify-content-center align-items-center">
+    <!-- <img src="../../../assets/img/Globe 3D Animated Icon (1).gif" alt="" /> -->
+    <div class="box">
+      <div class="d-flex justify-content-center mb-5">
+        <img src="../../../assets/img/logo.svg" alt="" style="width: 150px;">
       </div>
       <div>
-        Infos
+        <input
+          type="search"
+          class="form-control mb-3"
+          placeholder="Pesquisar por locais"
+        />
       </div>
-    </div>
+      <div class="tabela">
+        <table class="table table-hover">
+          <tbody>
+            @for (local of locaisTeste; track local.idlocal_visitacao) {
+            <tr [routerLink]="['/view-pontos']" [queryParams]="local">
+              <th scope="row">{{ local.nome }}</th>
+              <td>{{ local.descricao }}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>  
   </div>
 </div>
+
+

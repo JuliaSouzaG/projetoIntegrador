@@ -9,19 +9,20 @@ import { CadPontoComponent } from './components/adm/cad-ponto/cad-ponto.componen
 import { MapComponent } from './components/adm/map/map.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewPontosComponent } from './components/view-pontos/view-pontos.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent, title: 'Login de Usuário' },
     { path: 'esqueceu-a-senha', component: ForgtpasswdComponent, title: 'Esqueceu a senha' },
     { path: 'home', component: HomeComponent, title: 'Guia Virtual' },
     { path: 'view-pontos', component: ViewPontosComponent, title: 'Pontos' },
-    { path: 'inicio', component: InicioComponent,
+    { path: 'inicio', component: InicioComponent, canActivate: [authGuard],
         children: [
-            { path: 'cadastrar-administrador', component: CadAdmComponent},
-            { path: 'meu-perfil', component: MeuPerfilComponent},
-            { path: 'local', component: CadLocalComponent },
-            { path: 'ponto', component: CadPontoComponent },
-            { path: 'mapa', component: MapComponent },
+            { path: 'cadastrar-administrador', component: CadAdmComponent, canActivate: [authGuard] },
+            { path: 'meu-perfil', component: MeuPerfilComponent, canActivate: [authGuard] },
+            { path: 'local', component: CadLocalComponent, canActivate: [authGuard] },
+            { path: 'ponto', component: CadPontoComponent, canActivate: [authGuard] },
+            { path: 'mapa', component: MapComponent, canActivate: [authGuard] },
         ]
      },
     { path: '', redirectTo: 'home', pathMatch: 'full' },

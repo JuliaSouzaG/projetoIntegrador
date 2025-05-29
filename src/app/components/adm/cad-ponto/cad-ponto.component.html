@@ -7,7 +7,7 @@
     </div>
     <span class="user">Gerenciar Pontos {{ nome }}</span>
   </div>
-  <button mat-fab extended class="mat-fab mat-fab-btn" (click)="openCadDialog()">
+  <button mat-fab extended class="mat-fab mat-fab-btn" (click)="openCadDialog(idlocal_visitacao, nome)">
     <mat-icon>add</mat-icon>Novo Ponto
   </button>
 </div>
@@ -42,11 +42,20 @@
     </ng-container>
     <ng-container matColumnDef="imagem">
       <th mat-header-cell *matHeaderCellDef>Imagem</th>
-      <td mat-cell *matCellDef="let element">{{ element.imagem }}</td>
+      <td mat-cell *matCellDef="let element"><img [src]="element.imagem" alt=""></td>
+    </ng-container>
+    <ng-container matColumnDef="mapa">
+      <th mat-header-cell *matHeaderCellDef>Mapa</th>
+      <td mat-cell *matCellDef="let element"><img [src]="element.mapa" alt=""></td>
     </ng-container>
     <ng-container matColumnDef="audio">
       <th mat-header-cell *matHeaderCellDef>Audio</th>
-      <td mat-cell *matCellDef="let element">{{ element.audio }}</td>
+      <td mat-cell *matCellDef="let element">
+        <audio controls>
+          <source [src]="element.audio" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
     </ng-container>
     <ng-container matColumnDef="texto">
       <th mat-header-cell *matHeaderCellDef>Texto</th>

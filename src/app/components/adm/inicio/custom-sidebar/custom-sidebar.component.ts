@@ -49,6 +49,11 @@ export class CustomSidebarComponent {
       label: 'Meu Perfil',
       route: 'meu-perfil'
     },
+    {
+      icon: 'cancel',
+      label: 'Logout',
+      route: 'login'
+    },
   ])
 
   profilePicSize = computed(() => this.sidenavCollapsed() ? '53' : '100')

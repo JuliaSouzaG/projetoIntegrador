@@ -12,8 +12,8 @@ export class PontoService {
 
   url = 'http://localhost:3000/pontos';
 
-  criar(ponto: Ponto): Observable<Ponto> {
-    return this.http.post<Ponto>(this.url + '/criar', ponto);
+  criar(formulario: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/criar`, formulario);
   }
 
   listarTodos(): Observable<any> {

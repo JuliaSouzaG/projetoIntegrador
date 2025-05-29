@@ -40,6 +40,7 @@ export class CadLocalComponent implements OnInit {
   ngOnInit(): void {
     this.localService.listar().subscribe({
       next: (data) => {
+        console.log(data.locais)
         this.locais = data.locais
       }
     })

@@ -1,22 +1,75 @@
 .home {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* background-color: rgb(1, 1, 68); */
 }
 
 .box {
-    border: solid 1px rgb(199, 199, 199);
+    /* border: solid 1px rgb(199, 199, 199); */
     padding: 15px;
     border-radius: 10px;
+    width: 600px;
 }
 
-button {
-    width: 100%;
-    margin: 2px;
+
+table {
+    overflow: scroll;
+    /* --bs-table-bg: rgb(1, 1, 68);
+    --bs-table-color: white; */
+    font-size: 16px;
+  }
+
+tr {
+  cursor: pointer;
 }
 
-.infos {
-    display: flex;
-    justify-content: space-between;
+.titulo {
+  letter-spacing: 2.rem;
+  text-align: center;
+  /* color: white; */
+  font-weight: 500;
 }
+
+img {
+  width: 400px;
+}
+
+/* input {
+  width: 300px;
+  background-color: rgb(1, 1, 68);
+  color: white;
+}
+
+input:focus {
+  background-color: rgb(1, 1, 68);
+  color: white;
+}
+::-webkit-input-placeholder {
+  color: rgb(145, 145, 145);
+} */
+
+.tabela {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.mapa-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+}
+
+.mapa-base {
+  width: 100%;
+  display: block;
+}
+
+.pin-btn {
+  position: absolute;
+  transform: translate(-50%, -100%); /* centraliza o ponto acima do clique */
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}
+

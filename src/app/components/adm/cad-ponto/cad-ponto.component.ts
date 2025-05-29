@@ -62,8 +62,9 @@ export class CadPontoComponent implements OnInit {
     });
   }
 
-  openCadDialog() {
+  openCadDialog(id: number, nome: string) {
     this.dialog.open(CadModalComponent, {
+      data: {id: id, nome: nome},
       width: '600px'
     });
   }
@@ -74,6 +75,6 @@ export class CadPontoComponent implements OnInit {
     });
   }
 
-   displayedColumns: string[] = ['id', 'nome', 'imagem', 'audio', 'texto', 'acoes'];
+   displayedColumns: string[] = ['id', 'nome', 'imagem', 'mapa', 'audio', 'texto', 'acoes'];
 
 }
