@@ -230,3 +230,70 @@ footer {
     opacity: 1;
   }
 }
+
+.btn-ponto {
+  background-color: transparent;
+  border: 0.5px solid;
+  border-color: rgb(221, 221, 221);
+  border-radius: 10px;
+  padding: 10px 25px;
+  margin: 2px;
+  font-weight: 500;
+}
+
+.btn-ponto:hover {
+  background-color: #1e5b3c;
+  color: white;
+}
+
+.div_btn_ponto {
+  margin-top: 10px;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    text-decoration: none;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #1e5b3c;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.logo-text h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}

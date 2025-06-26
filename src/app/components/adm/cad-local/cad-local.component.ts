@@ -65,5 +65,5 @@ export class CadLocalComponent implements OnInit {
     });
   }
 
-   displayedColumns: string[] = ['id', 'nome', 'descricao', 'acoes'];
+   displayedColumns: string[] = ['id', 'nome', 'descricao', 'localizacao', 'zona', 'tipo_local', 'acoes'];
 }

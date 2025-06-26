@@ -1,37 +1,271 @@
-<div class="home d-flex align-items-center justify-content-center">
-  <!-- <div class="mt-5">
-    <h1 class="titulo">NAVEGUE POR TODOS OS LUGARES!</h1>
-    <p class="text-light text-center mb-3">
-      selecione o local para visitar seus pontos:
-    </p>
-  </div> -->
-  <div class="d-flex justify-content-center align-items-center">
-    <!-- <img src="../../../assets/img/Globe 3D Animated Icon (1).gif" alt="" /> -->
-    <div class="box">
-      <div class="d-flex justify-content-center mb-5">
-        <img src="../../../assets/img/logo.svg" alt="" style="width: 150px;">
-      </div>
-      <div>
-        <input
-          type="search"
-          class="form-control mb-3"
-          placeholder="Pesquisar por locais"
-        />
-      </div>
-      <div class="tabela">
-        <table class="table table-hover">
-          <tbody>
-            @for (local of locaisTeste; track local.idlocal_visitacao) {
-            <tr [routerLink]="['/view-pontos']" [queryParams]="local">
-              <th scope="row">{{ local.nome }}</th>
-              <td>{{ local.descricao }}</td>
-            </tr>
-            }
-          </tbody>
-        </table>
-      </div>
-    </div>  
-  </div>
-</div>
+   <body>
+       <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>GUIA VIRTUAL</h1>
+                        <p>Descubra Manaus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    Explore os Melhores
+                    <span class="hero-title-highlight">Destinos de Manaus</span>
+                </h2>
+                <p class="hero-description">
+                    Descubra museus, teatros, institutos e parques com guias interativos, 
+                    realidade aumentada e experiências únicas.
+                </p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-section">
+                <div class="search-grid">
+                    <div class="search-input-container">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        <input type="text" placeholder="Pesquisar por locais..." class="search-input" id="searchInput">
+                    </div>
+                    
+                    <div class="select-container">
+                        <select class="select-input" id="zoneSelect">
+                            <option value="">Zona da cidade</option>
+                            <option value="all">Todas as zonas</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Zona Norte">Zona Norte</option>
+                            <option value="Zona Sul">Zona Sul</option>
+                            <option value="Zona Leste">Zona Leste</option>
+                            <option value="Zona Oeste">Zona Oeste</option>
+                            <option value="Zona Rural">Zona Rural</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        <select class="select-input" id="typeSelect">
+                            <option value="">Tipo de local</option>
+                            <option value="all">Todos os tipos</option>
+                            <option value="Instituto">Instituto</option>
+                            <option value="Museu">Museu</option>
+                            <option value="Teatro">Teatro</option>
+                            <option value="Parque">Parque</option>
+                            <option value="Centro Cultural">Centro Cultural</option>
+                            <option value="Memorial">Memorial</option>
+                            <option value="Zoológico">Zoológico</option>
+                            <option value="Aquário">Aquário</option>
+                            <option value="Reserva Ambiental">Reserva Ambiental</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results-info">
+                <p id="resultsCount">4 locais encontrados</p>
+            </div>
+
+            <!-- Location Cards -->
+            <div class="cards-grid" id="cardsGrid">
+                <!-- INPA Card -->
+                <div class="location-card" data-type="Instituto" data-zone="Zona Norte">
+                    <div class="card-image">
+                        <img src="../../../assets/img/mock/inpa.png" alt="INPA">
+                        <div class="card-badge">Instituto</div>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h3 class="card-title">INPA</h3>
+                        <p class="card-description">Instituto Nacional de Pesquisa Amazonas</p>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Aleixo, Zona Norte
+                        </div>
+
+                        <!-- <div class="card-highlights">
+                            <span class="highlight-badge">Bosque da Ciência</span>
+                            <span class="highlight-badge">Aquário</span>
+                            <span class="highlight-badge">Trilhas</span>
+                        </div> -->
+
+                        <button class="explore-button" routerLink="/view-pontos">
+                            Explorar Local
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MUSA Card -->
+                <div class="location-card" data-type="Museu" data-zone="Zona Norte">
+                    <div class="card-image">
+                        <img src="../../../assets/img/mock/musa.png" alt="MUSA">
+                        <div class="card-badge">Museu</div>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h3 class="card-title">MUSA</h3>
+                        <p class="card-description">Museu da Amazônia</p>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Cidade de Deus, Zona Norte
+                        </div>
+
+                        <!-- <div class="card-highlights">
+                            <span class="highlight-badge">Torre de Observação</span>
+                            <span class="highlight-badge">Exposições</span>
+                            <span class="highlight-badge">Natureza</span>
+                        </div> -->
+
+                        <button class="explore-button">
+                            Explorar Local
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Teatro Amazonas Card -->
+                <div class="location-card" data-type="Teatro" data-zone="Centro">
+                    <div class="card-image">
+                        <img src="../../../assets/img/mock/teatro.png" alt="Teatro Amazonas">
+                        <div class="card-badge">Teatro</div>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h3 class="card-title">Teatro do Amazonas</h3>
+                        <p class="card-description">Teatro Amazonas</p>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Centro Histórico, Centro
+                        </div>
+<!-- 
+                        <div class="card-highlights">
+                            <span class="highlight-badge">Arquitetura</span>
+                            <span class="highlight-badge">História</span>
+                            <span class="highlight-badge">Espetáculos</span>
+                        </div> -->
+
+                        <button class="explore-button">
+                            Explorar Local
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Encontro das Águas Card -->
+                <div class="location-card" data-type="Parque" data-zone="Zona Rural">
+                    <div class="card-image">
+                        <img src="../../../assets/img/mock/cigs.png" alt="CIGS">
+                        <div class="card-badge">Parque</div>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h3 class="card-title">Encontro das Águas</h3>
+                        <p class="card-description">Encontro das Águas dos Rios Negro e Solimões</p>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Iranduba, Zona Rural
+                        </div>
+
+                        <!-- <div class="card-highlights">
+                            <span class="highlight-badge">Fenômeno Natural</span>
+                            <span class="highlight-badge">Passeio de Barco</span>
+                            <span class="highlight-badge">Fotografia</span>
+                        </div> -->
+
+                        <button class="explore-button">
+                            Explorar Local
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </div>
+                <h3>Nenhum local encontrado</h3>
+                <p>Tente ajustar os filtros ou buscar por outros termos.</p>
+                <button class="clear-filters-button" id="clearFiltersBtn">Limpar Filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Locais Cadastrados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100k+</div>
+                    <div class="stat-label">Visitantes Atendidos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Suporte Digital</div>
+                </div>
+            </div>
+        </div>
+    </section>
+   </body>
 
 
+    

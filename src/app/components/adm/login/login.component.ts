@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../service/auth/auth.service';
+import { LoginService } from '../../../service/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +20,8 @@ export class LoginComponent {
 
   ngOnInit(): void {
       this.form = this.fb.group({
-        emailUsuario: ['', Validators.compose([Validators.required, Validators.email, Validators.pattern('.*\\..*')])],
-        senhaUsuario: ['', Validators.required]
+        emailusuario: ['', Validators.compose([Validators.required, Validators.email, Validators.pattern('.*\\..*')])],
+        senhausuario: ['', Validators.required]
       });
   }
 
@@ -33,6 +34,7 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error('Erro no login:', err);
+        console.log(this.form.value)
         alert('Usuário ou senha inválidos. Por favor, tente novamente.');
       }
     });

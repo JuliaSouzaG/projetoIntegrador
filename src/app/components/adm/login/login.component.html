@@ -10,14 +10,14 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label for="user">E-mail</label>
-                    <input type="email" id="user" class="form-control" formControlName="emailUsuario">
+                    <input type="email" id="user" class="form-control" formControlName="emailusuario">
                     @if (form.get('email')?.errors?.['email'] && form.get('email')?.touched) {
                     <span>Insira um e-mail válido.</span>
                     }
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
-                    <input type="password" id="senha" class="form-control" formControlName="senhaUsuario">
+                    <input type="password" id="senha" class="form-control" formControlName="senhausuario">
                 </div>
                 <div class="forgotPassword float-end mb-4">
                     <a routerLink="/esqueceu-a-senha">Esqueceu a senha?</a>

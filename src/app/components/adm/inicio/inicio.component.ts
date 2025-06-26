@@ -37,6 +37,10 @@ export class InicioComponent {
 
   collapsed = signal(false)
 
+  logout() {
+    localStorage.clear();
+  }
+
   sidenavWidth = computed(() => this.collapsed() ? '65px' : '250px')
   
 }

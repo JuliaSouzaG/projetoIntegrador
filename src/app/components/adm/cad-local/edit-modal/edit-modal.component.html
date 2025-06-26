@@ -2,12 +2,24 @@
 <h2 mat-dialog-title>{{ data.local.nome }}</h2>
 <mat-dialog-content>
   <div class="mb-3">
-    <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" [value]="data.local.nome" formControlName="nome">
+    <label for="titulo" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="titulo" [value]="data.local.titulo" formControlName="titulo">
   </div>
   <div class="mb-3 col-12">
     <label for="descricao" class="form-label">Descrição</label>
-    <input type="descricao" class="form-control" id="descricao" [value]="data.local.descricao" formControlName="descricao">
+    <input type="text" class="form-control" id="descricao" [value]="data.local.descricao" formControlName="descricao">
+  </div>
+  <div class="mb-3 col-12">
+    <label for="localizacao" class="form-label">Localização</label>
+    <input type="text" class="form-control" id="localizacao" [value]="data.local.localizacao" formControlName="localizacao">
+  </div>
+  <div class="mb-3 col-12">
+    <label for="tipo_local" class="form-label">Tipo do Local</label>
+    <input type="text" class="form-control" id="tipo_local" [value]="data.local.tipo_local" formControlName="tipo_local">
+  </div>
+  <div class="mb-3 col-12">
+    <label for="zona" class="form-label">Zona</label>
+    <input type="text" class="form-control" id="zona" [value]="data.local.zona" formControlName="zona">
   </div>
 </mat-dialog-content>
 <mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">

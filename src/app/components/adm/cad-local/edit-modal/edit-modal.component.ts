@@ -29,8 +29,11 @@ export class EditModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      nome: [this.data.local.nome, Validators.required],
-      descricao: [this.data.local.descricao, Validators.required]
+      titulo: [this.data.local.titulo, Validators.required],
+      descricao: [this.data.local.descricao, Validators.required],
+      localizacao: [this.data.local.localizacao, Validators.required],
+      zona: [this.data.local.zona, Validators.required],
+      tipo_local: [this.data.local.tipo_local, Validators.required]
     })
   }
 

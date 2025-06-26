@@ -1,76 +1,73 @@
-
-<body>
-  
-  <header>
-      <div class="container header-content">
-        <div class="logo-container">
-          <!-- <img src="../../../assets/img/logo.svg" alt="Logo" class="logo"> -->
-          <h1>Explorar <span class="accent-dot">•</span> Bosque da Ciência</h1>
-        </div>
-  
-        <div class="language-dropdown">
-          <div class="dropdown">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              BR Português
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">EN English</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  </header>
+       <!-- Header -->
     
-    <!-- Main Content - Two Panel Layout -->
-    <main class="container">
-      <div class="panels-container">
-
-        <div class="map-panel">
-          <div class="interactive-map">
-            <div class="map-img">
-              <img class="map" src="../../../assets/img/musa-maps.jpg" alt="Mapa">
-            </div>
-            <div class="p-3 infos-map">
-              <h3>Borboletário</h3>
-              <p>Exposição de Borboletas</p>
-            </div>
-          </div>
+    <header class="header">
+        <div class="container">
+            <a class="header-content" href="/home">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>GUIA VIRTUAL</h1>
+                        <p>Descubra Manaus</p>
+                    </div>
+                </div>
+              </a>
         </div>
-        
-        <div class="details-panel">
-          <div class="point-details-container">
-               <!-- Main image -->
-            <div class="main-image-container">
-              <img id="main-image" src="../../../assets/img/inpa/borboleta.png" alt="Ponto de interesse">
-              <div class="image-overlay">
-                <h2 id="point-title">Borboletário</h2>
-              </div>
-            </div>
+    </header>
 
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue ex sem. Etiam vitae lectus eget libero consequat ullamcorper in ac dui. In luctus metus vitae finibus tincidunt. Morbi ut commodo ante. 
-                Vestibulum suscipit sapien vitae metus semper condimentum. Quisque vehicula mauris a dui viverra, quis blandit ante gravida. 
-                Nulla vitae nisi odio. Morbi urna ante, pellentesque ac mattis sit amet, tempor ac nunc. Curabitur dictum eleifend enim eu facilisis. Nunc risus tellus, tristique a odio vitae, imperdiet tincidunt nisl. Aenean vitae semper purus.</p>
-              <p>In ut sapien ac mauris fringilla finibus quis in elit. Nulla feugiat leo id ipsum pellentesque, quis auctor est malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi in dapibus lectus. Phasellus nec magna non massa feugiat blandit et non lacus. Praesent aliquam lacinia ligula, et molestie libero sagittis nec.</p>
-            </div>
+<main class="container">
+  <div class="panels-container">
 
-            <div class="action-buttons">
-              <button class="action-button audio-action" onclick="handleAudioAction()">
-                <span class="icon me-2"><i class="bi bi-volume-up"></i></span>
-                <span>Audioguia</span>
-              </button>
-            </div>
-          </div>
+    <!-- Painel do Mapa -->
+    <div class="map-panel">
+      <div class="interactive-map">
+        <div class="map-img">
+          <img class="map" [src]="pontoSelecionado.mapa" alt="Mapa">
         </div>
-
+        <div class="p-3 infos-map">
+          <h3>{{ pontoSelecionado.nome }}</h3>
+          <p>{{ pontoSelecionado.descricao }}</p>
+        </div>
       </div>
-    </main>
- 
-    <!-- Footer -->
-    <footer>
-      <p>Guia Virtual - INPA © 2025</p>
-    </footer>
 
-  </body>
+      <!-- Botões dos Pontos -->
+      <div class="div_btn_ponto">
+          <button class="btn-ponto" (click)="selecionarPonto(ponto)" *ngFor="let ponto of pontos">
+            <i class="bi bi-geo-alt-fill text-danger"></i> {{ ponto.nome }}
+          </button>
+      </div>
+    </div>
+
+    <!-- Painel de Detalhes -->
+    <div class="details-panel">
+      <div class="point-details-container">
+        <div class="main-image-container">
+          <img id="main-image" [src]="pontoSelecionado.imagem" alt="{{ pontoSelecionado.nome }}">
+          <div class="image-overlay">
+            <h2 id="point-title">{{ pontoSelecionado.titulo }}</h2>
+          </div>
+        </div>
+
+        <div>
+          <p>{{ pontoSelecionado.descricao }}</p>
+        </div>
+
+        <div class="action-buttons">
+          <button class="action-button audio-action" (click)="handleAudioAction()">
+            <span class="icon me-2"><i class="bi bi-volume-up"></i></span>
+            <span>Audioguia</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>Guia Virtual - © 2025</p>
+</footer>

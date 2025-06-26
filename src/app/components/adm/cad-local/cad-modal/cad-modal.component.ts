@@ -28,8 +28,11 @@ export class CadModalComponent implements OnInit {
   ngOnInit(): void {
     
     this.form = this.fb.group({
-      nome: ['', Validators.required],
-      descricao: ['', Validators.required]
+      titulo: ['', Validators.required],
+      descricao: ['', Validators.required],
+      localizacao: ['', Validators.required],
+      zona: ['', Validators.required],
+      tipo_local: ['', Validators.required]
     });
 
   }
