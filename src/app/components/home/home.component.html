@@ -83,15 +83,16 @@
             <!-- Location Cards -->
             <div class="cards-grid" id="cardsGrid">
                 <!-- INPA Card -->
+                 @for (local of locaiss; track local.idlocal_visitacao) {
                 <div class="location-card" data-type="Instituto" data-zone="Zona Norte">
                     <div class="card-image">
                         <img src="../../../assets/img/mock/inpa.png" alt="INPA">
-                        <div class="card-badge">Instituto</div>
+                        <div class="card-badge">{{local.tipo_local}}</div>
                     </div>
                     
                     <div class="card-header">
-                        <h3 class="card-title">INPA</h3>
-                        <p class="card-description">Instituto Nacional de Pesquisa Amazonas</p>
+                        <h3 class="card-title">{{local.titulo}}</h3>
+                        <p class="card-description">{{local.descricao}}</p>
                     </div>
                     
                     <div class="card-content">
@@ -100,7 +101,7 @@
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                 <circle cx="12" cy="10" r="3"/>
                             </svg>
-                            Aleixo, Zona Norte
+                            {{local.localizacao}}, {{local.zona}}
                         </div>
 
                         <!-- <div class="card-highlights">
@@ -117,10 +118,10 @@
                             </svg>
                         </button>
                     </div>
-                </div>
+                </div> }
 
                 <!-- MUSA Card -->
-                <div class="location-card" data-type="Museu" data-zone="Zona Norte">
+                <!-- <div class="location-card" data-type="Museu" data-zone="Zona Norte">
                     <div class="card-image">
                         <img src="../../../assets/img/mock/musa.png" alt="MUSA">
                         <div class="card-badge">Museu</div>
@@ -140,12 +141,6 @@
                             Cidade de Deus, Zona Norte
                         </div>
 
-                        <!-- <div class="card-highlights">
-                            <span class="highlight-badge">Torre de Observação</span>
-                            <span class="highlight-badge">Exposições</span>
-                            <span class="highlight-badge">Natureza</span>
-                        </div> -->
-
                         <button class="explore-button">
                             Explorar Local
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -154,10 +149,10 @@
                             </svg>
                         </button>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Teatro Amazonas Card -->
-                <div class="location-card" data-type="Teatro" data-zone="Centro">
+                <!-- <div class="location-card" data-type="Teatro" data-zone="Centro">
                     <div class="card-image">
                         <img src="../../../assets/img/mock/teatro.png" alt="Teatro Amazonas">
                         <div class="card-badge">Teatro</div>
@@ -176,12 +171,6 @@
                             </svg>
                             Centro Histórico, Centro
                         </div>
-<!-- 
-                        <div class="card-highlights">
-                            <span class="highlight-badge">Arquitetura</span>
-                            <span class="highlight-badge">História</span>
-                            <span class="highlight-badge">Espetáculos</span>
-                        </div> -->
 
                         <button class="explore-button">
                             Explorar Local
@@ -191,10 +180,10 @@
                             </svg>
                         </button>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Encontro das Águas Card -->
-                <div class="location-card" data-type="Parque" data-zone="Zona Rural">
+                <!-- <div class="location-card" data-type="Parque" data-zone="Zona Rural">
                     <div class="card-image">
                         <img src="../../../assets/img/mock/cigs.png" alt="CIGS">
                         <div class="card-badge">Parque</div>
@@ -214,12 +203,6 @@
                             Iranduba, Zona Rural
                         </div>
 
-                        <!-- <div class="card-highlights">
-                            <span class="highlight-badge">Fenômeno Natural</span>
-                            <span class="highlight-badge">Passeio de Barco</span>
-                            <span class="highlight-badge">Fotografia</span>
-                        </div> -->
-
                         <button class="explore-button">
                             Explorar Local
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -228,7 +211,7 @@
                             </svg>
                         </button>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- Empty State -->

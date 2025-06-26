@@ -30,16 +30,16 @@ export class EditModalComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      nomeUsuario: [this.data.user.nomeUsuario, Validators.required],
-      emailUsuario: [this.data.user.emailUsuario, Validators.compose([Validators.required, Validators.email])],
-      senhaUsuario: [this.data.user.senhaUsuario, Validators.required]
+      nomeusuario: [this.data.user.nomeusuario, Validators.required],
+      emailusuario: [this.data.user.emailusuario, Validators.compose([Validators.required, Validators.email])],
+      senhausuario: [this.data.user.senhausuario, Validators.required]
     })
 
   }
 
   onSubmit() {
 
-    this.usuarioService.editar(this.data.user.idUsuario, this.form.value).subscribe({
+    this.usuarioService.editar(this.data.user.idusuario, this.form.value).subscribe({
       next: (data) => {
         console.log(data)
         location.reload()

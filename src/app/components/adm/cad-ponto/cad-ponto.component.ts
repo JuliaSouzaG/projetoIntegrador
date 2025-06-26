@@ -38,7 +38,7 @@ export class CadPontoComponent implements OnInit {
   constructor(private route: ActivatedRoute, public dialog: MatDialog, private pontoService: PontoService) {
     this.route.queryParams.subscribe(params => {
       console.log(params['nome']);
-      this.nome = params['nome'];
+      this.nome = params['titulo'];
       this.descricao = params['descricao'];
       this.idlocal_visitacao = params['idlocal_visitacao'];
     });

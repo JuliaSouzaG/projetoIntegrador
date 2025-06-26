@@ -25,7 +25,7 @@ export class CadModalComponent {
         
         this.form = this.fb.group({
           nome: ['', Validators.required],
-          texto: ['', Validators.required]
+          descricao: ['', Validators.required]
         });
     
     }
@@ -47,7 +47,7 @@ export class CadModalComponent {
       if (this.form.valid && this.selectedImage && this.selectedMapa && this.selectedAudio) {
         const formData = new FormData();
         formData.append('nome', this.form.get('nome')?.value);
-        formData.append('texto', this.form.get('texto')?.value);
+        formData.append('descricao', this.form.get('descricao')?.value);
         formData.append('image', this.selectedImage);
         formData.append('mapa', this.selectedMapa);
         formData.append('audio', this.selectedAudio);

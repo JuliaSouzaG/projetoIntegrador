@@ -91,7 +91,6 @@ export class HomeComponent implements OnInit {
 
   abrirDetalhes(ponto: any) {
     alert(`Ponto: ${ponto.nome}`);
-    // Aqui você pode também navegar para outra rota: this.router.navigate(['/ponto', ponto.id])
   }
 
 }

@@ -8,7 +8,7 @@ export interface Ponto {
 
     audio: string;
 
-    texto: string;
+    descricao: string;
 
     mapa: string
     

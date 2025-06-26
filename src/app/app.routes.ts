@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent, title: 'Login de Usuário' },
     { path: 'esqueceu-a-senha', component: ForgtpasswdComponent, title: 'Esqueceu a senha' },
     { path: 'home', component: HomeComponent, title: 'Guia Virtual' },
-    { path: 'view-pontos', component: ViewPontosComponent, title: 'Pontos' },
+    { path: 'view-pontos/:id', component: ViewPontosComponent, title: 'Pontos' },
     { path: 'inicio', component: InicioComponent, canActivate: [authGuard],
         children: [
             { path: 'cadastrar-administrador', component: CadAdmComponent, canActivate: [authGuard] },
