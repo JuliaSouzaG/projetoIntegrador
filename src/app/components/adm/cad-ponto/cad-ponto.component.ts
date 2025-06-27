@@ -11,6 +11,7 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { DeletModalComponent } from './delet-modal/delet-modal.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { PontoService } from '../../../service/ponto/ponto.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cad-ponto',
@@ -35,7 +36,7 @@ export class CadPontoComponent implements OnInit {
   descricao!: string;
   idlocal_visitacao!: number;
 
-  constructor(private route: ActivatedRoute, public dialog: MatDialog, private pontoService: PontoService) {
+  constructor(private route: ActivatedRoute, public dialog: MatDialog, private pontoService: PontoService, private location: Location) {
     this.route.queryParams.subscribe(params => {
       console.log(params['nome']);
       this.nome = params['titulo'];
@@ -45,15 +46,26 @@ export class CadPontoComponent implements OnInit {
   }
 
   pontos!: Ponto[]
+
+  goBack(): void {
+     this.location.back();
+   }
   
-  ngOnInit(): void {
-    this.pontoService.listar(this.idlocal_visitacao).subscribe({
-      next: (data) => {
-        console.log(data)
-        this.pontos = data
-      } 
-    })
-  }
+ngOnInit(): void {
+  this.pontoService.listar(this.idlocal_visitacao).subscribe({
+    next: (data) => {
+      this.pontos = data.map((ponto: any) => {
+        return {
+          ...ponto,
+          imagem: typeof ponto.imagem === 'string'
+            ? ponto.imagem.replace(/[\[\]"]/g, '')
+            : ponto.imagem
+        };
+      });
+      console.log(this.pontos);
+    } 
+  });
+}
 
   openEditDialog(ponto: Ponto) {
     this.dialog.open(EditModalComponent, {

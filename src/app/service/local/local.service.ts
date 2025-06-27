@@ -12,8 +12,8 @@ export class LocalService {
 
   url = 'http://localhost:3000/locais';
 
-  criar(local: Local): Observable<Local> {
-    return this.http.post<Local>(this.url + '/criar', local)
+  criar(local: any): Observable<any> {
+    return this.http.post<any>(this.url + '/criar', local)
   }
 
   listar(): Observable<any> {
@@ -24,7 +24,7 @@ export class LocalService {
     return this.http.delete<any>(this.url + `/excluir/${id}`);
   }
 
-  editar(id: number, local: Local): Observable<any> {
+  editar(id: number, local: any): Observable<any> {
     return this.http.put<any>(this.url + `/alterar/${id}`, local);
   }
   

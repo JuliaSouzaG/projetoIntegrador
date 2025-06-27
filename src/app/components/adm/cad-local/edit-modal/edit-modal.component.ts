@@ -37,9 +37,27 @@ export class EditModalComponent implements OnInit {
     })
   }
 
+  selectedImage!: File;
+
+  onFileChange(event: any, tipo: string) {
+      const file = event.target.files[0];
+      if (file) {
+        if (tipo === 'imagem') this.selectedImage = file;
+      }
+    }
+
   onSubmit() {
 
     if (this.form.valid) {
+
+      const formData = new FormData();
+      formData.append('imagem', this.selectedImage);
+      formData.append('titulo', this.form.get('titulo')?.value);
+      formData.append('descricao', this.form.get('descricao')?.value);
+      formData.append('zona', this.form.get('zona')?.value);
+      formData.append('tipo_local', this.form.get('tipo_local')?.value);
+      formData.append('localizacao', this.form.get('localizacao')?.value);   
+
       this.localService.editar(this.data.local.idlocal_visitacao, this.form.value).subscribe({
         next: () => {
           location.reload()

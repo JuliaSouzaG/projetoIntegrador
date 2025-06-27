@@ -38,13 +38,21 @@ export class CadLocalComponent implements OnInit {
   locais!: Local[]
 
   ngOnInit(): void {
-    this.localService.listar().subscribe({
-      next: (data) => {
-        console.log(data.locais)
-        this.locais = data.locais
-      }
-    })
-  }
+  this.localService.listar().subscribe({
+    next: (data) => {
+      this.locais = data.locais.map((local: any) => {
+        return {
+          ...local,
+          imagem: typeof local.imagem === 'string'
+            ? local.imagem.replace(/[\[\]"]/g, '')
+            : local.imagem
+        };
+      });
+      console.log(this.locais);
+    }
+  });
+}
+
 
   openEditDialog(local: Local) {
     this.dialog.open(EditModalComponent, {
@@ -65,5 +73,5 @@ export class CadLocalComponent implements OnInit {
     });
   }
 
-   displayedColumns: string[] = ['id', 'nome', 'descricao', 'localizacao', 'zona', 'tipo_local', 'acoes'];
+   displayedColumns: string[] = ['id', 'nome', 'descricao', 'localizacao', 'zona', 'tipo_local', 'imagem', 'acoes'];
 }

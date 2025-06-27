@@ -1,30 +1,30 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
   <div class="d-flex justify-content-between align-items-center">
     <div>
-      <button mat-mini-fab class="me-2 mat-fab mat-fab-icon">
-        <mat-icon>room</mat-icon>
+      <button mat-mini-fab class="me-2 mat-fab mat-fab-icon" (click)="goBack()">
+        <mat-icon>keyboard_backspace</mat-icon>
       </button>
     </div>
-    <span class="user">Gerenciar Pontos {{ nome }}</span>
+    <span class="user">Gerenciar Pontos - {{ nome }}</span>
   </div>
   <button mat-fab extended class="mat-fab mat-fab-btn" (click)="openCadDialog(idlocal_visitacao, nome)">
     <mat-icon>add</mat-icon>Novo Ponto
   </button>
 </div>
 
-<div class="mb-3 local p-3">
+<!-- <div class="mb-3 local p-3">
   <div><span>Local:</span> {{ nome }}</div>
   <div><span>Descrição:</span> {{ descricao }}</div>
-</div>
+</div> -->
 
-<div class="mb-3">
+<!-- <div class="mb-3">
   <div
     class="d-flex justify-content-between align-items-center inpt"
   >
     <mat-icon class="me-1">search</mat-icon>
     <input type="text" placeholder="Buscar..." />
   </div>
-</div>
+</div> -->
 
 <div class="tabela">
   <table
@@ -34,7 +34,7 @@
   >
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let element">{{ element.idPontoVisitacao }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.idponto_visitacao }}</td>
     </ng-container>
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef>Nome</th>

@@ -1,4 +1,4 @@
-   <body>
+   <div class="body">
        <!-- Header -->
     <header class="header">
         <div class="container">
@@ -76,9 +76,9 @@
             </div>
 
             <!-- Results -->
-            <div class="results-info">
+            <!-- <div class="results-info">
                 <p id="resultsCount">4 locais encontrados</p>
-            </div>
+            </div> -->
 
             <!-- Location Cards -->
             <div class="cards-grid" id="cardsGrid">
@@ -86,7 +86,7 @@
                  @for (local of locaiss; track local.idlocal_visitacao) {
                 <div class="location-card" data-type="Instituto" data-zone="Zona Norte">
                     <div class="card-image">
-                        <img src="../../../assets/img/mock/inpa.png" alt="INPA">
+                        <img [src]="sanitizeImagem(local.imagem)" [alt]="local.titulo">
                         <div class="card-badge">{{local.tipo_local}}</div>
                     </div>
                     
@@ -110,13 +110,13 @@
                             <span class="highlight-badge">Trilhas</span>
                         </div> -->
 
-                        <button class="explore-button" routerLink="/view-pontos">
+                        <a class="explore-button" [routerLink]="['/view-pontos', local.idlocal_visitacao]">
                             Explorar Local
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14"/>
                                 <path d="m12 5 7 7-7 7"/>
                             </svg>
-                        </button>
+                        </a>
                     </div>
                 </div> }
 
@@ -248,7 +248,7 @@
             </div>
         </div>
     </section>
-   </body>
+</div>
 
 
     

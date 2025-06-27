@@ -6,6 +6,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Ponto } from '../../model/ponto';
+import { Location } from '@angular/common';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-view-pontos',
@@ -16,7 +18,10 @@ import { Ponto } from '../../model/ponto';
 })
 export class ViewPontosComponent {
 
-  constructor(private route: ActivatedRoute, private pontoService: PontoService, private http: HttpClient, private location: Location ) {}
+  mapaSanitizado!: SafeUrl;
+  imagemSanitizada!: SafeUrl;
+
+  constructor(private route: ActivatedRoute, private pontoService: PontoService, private http: HttpClient, private location: Location, private sanitizer: DomSanitizer ) {}
 
   //   pontos = [
   //   {
@@ -46,29 +51,49 @@ export class ViewPontosComponent {
   local!: any
   localId!: number
   pontos!: Ponto[]
+  pontoSelecionado!: any
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.localId = Number(params.get('id'));
-      this.http.get(`http://localhost:3000/view_pontos/?id=${this.localId}`).subscribe(data => {
-        this.local = data;
-        this.data = this.local[0]
-      });
+      // this.http.get(`http://localhost:3000/view_pontos/?id=${this.localId}`).subscribe(data => {
+      //   this.local = data;
+      //   this.data = this.local[0]
+      // });
 
     });
+    console.log(this.localId)
     this.pontoService.listar(this.localId).subscribe({
       next: (data) => {
-        this.pontos = data.pontos
+        this.pontos = data
+        console.log(this.pontos)
+        this.pontoSelecionado = this.pontos[0];
+        const rawMapa = this.pontoSelecionado.mapa;
+        const rawImagem = this.pontoSelecionado.imagem;
+
+        const mapaUrl = Array.isArray(rawMapa) ? rawMapa[0] : JSON.parse(rawMapa)[0] ?? rawMapa;
+        const imagemUrl = Array.isArray(rawImagem) ? rawImagem[0] : JSON.parse(rawImagem)[0] ?? rawImagem;
+
+        this.mapaSanitizado = this.sanitizer.bypassSecurityTrustUrl(mapaUrl);
+        this.imagemSanitizada = this.sanitizer.bypassSecurityTrustUrl(imagemUrl);
       }
     })
   }
 
-  // Ponto atualmente selecionado
-  pontoSelecionado = this.pontos[0]; // Começa com o primeiro (Borboletário)
+
 
   // Método chamado ao clicar no botão
   selecionarPonto(ponto: any) {
     this.pontoSelecionado = ponto;
+    const rawMapa = ponto.mapa;
+    const rawImagem = ponto.imagem;
+
+    const mapaUrl = Array.isArray(rawMapa) ? rawMapa[0] : JSON.parse(rawMapa)[0] ?? rawMapa;
+    const imagemUrl = Array.isArray(rawImagem) ? rawImagem[0] : JSON.parse(rawImagem)[0] ?? rawImagem;
+
+    this.mapaSanitizado = this.sanitizer.bypassSecurityTrustUrl(mapaUrl);
+    this.imagemSanitizada = this.sanitizer.bypassSecurityTrustUrl(imagemUrl);
+
   }
 
   // Ação para o audioguia (exemplo simples)

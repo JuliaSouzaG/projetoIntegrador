@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { PontoService } from '../../../../service/ponto/ponto.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cad-modal',
@@ -17,6 +18,7 @@ export class CadModalComponent {
       private fb: FormBuilder,
       private pontoService: PontoService,
       @Inject(MAT_DIALOG_DATA) public data: any,
+      private location: Location
     ) {}
 
     form!: FormGroup;
@@ -25,7 +27,7 @@ export class CadModalComponent {
         
         this.form = this.fb.group({
           nome: ['', Validators.required],
-          descricao: ['', Validators.required]
+          descricao: ['', Validators.required], 
         });
     
     }
@@ -37,7 +39,7 @@ export class CadModalComponent {
     onFileChange(event: any, tipo: string) {
       const file = event.target.files[0];
       if (file) {
-        if (tipo === 'image') this.selectedImage = file;
+        if (tipo === 'imagem') this.selectedImage = file;
         if (tipo === 'mapa') this.selectedMapa = file;
         if (tipo === 'audio') this.selectedAudio = file;
       }
@@ -48,10 +50,10 @@ export class CadModalComponent {
         const formData = new FormData();
         formData.append('nome', this.form.get('nome')?.value);
         formData.append('descricao', this.form.get('descricao')?.value);
-        formData.append('image', this.selectedImage);
+        formData.append('imagem', this.selectedImage);
         formData.append('mapa', this.selectedMapa);
         formData.append('audio', this.selectedAudio);
-        formData.append('idLocalVisitacao', this.data.id); // você pode ajustar isso conforme sua lógica
+        formData.append('idlocal_visitacao', this.data.id); // você pode ajustar isso conforme sua lógica
 
         this.pontoService.criar(formData).subscribe({
           next: (res) => {
@@ -60,7 +62,7 @@ export class CadModalComponent {
           },
           error: (err) => {
             console.error(err);
-            alert('Erro ao criar ponto');
+            alert('Erro ao criar ponto: ' + err);
           }
         });
       } else {

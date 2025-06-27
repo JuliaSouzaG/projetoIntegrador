@@ -22,6 +22,10 @@
       <label for="zona" class="form-label">Zona</label>
       <input type="zona" class="form-control" id="zona" formControlName="zona">
     </div>
+    <div class="mb-3 col-12">
+      <label for="imagem" class="form-label">Imagem</label>
+      <input type="file" class="form-control" id="imagem" formControlName="imagem" (change)="onFileChange($event, 'imagem')">
+    </div>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions class="d-flex justify-content-end me-3 mb-2">

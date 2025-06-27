@@ -17,12 +17,12 @@
   </button>
 </div>
 
-<div class="mb-3">
+<!-- <div class="mb-3">
   <div class="d-flex justify-content-between align-items-center inpt">
     <mat-icon class="me-1">search</mat-icon>
     <input type="text" placeholder="Buscar..." />
   </div>
-</div>
+</div> -->
 
 <div class="tabela">
   <table mat-table [dataSource]="locais" class="mat-elevation-z8">
@@ -49,6 +49,10 @@
      <ng-container matColumnDef="tipo_local">
       <th mat-header-cell *matHeaderCellDef>Tipo Local</th>
       <td mat-cell *matCellDef="let element">{{ element.tipo_local }}</td>
+    </ng-container>
+    <ng-container matColumnDef="imagem">
+      <th mat-header-cell *matHeaderCellDef>Imagem</th>
+      <td mat-cell *matCellDef="let element"><img id="imagem_loc" [src]="element.imagem" [alt]="element.nome"></td>
     </ng-container>
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef></th>

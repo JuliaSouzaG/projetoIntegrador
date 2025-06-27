@@ -20,6 +20,10 @@ table {
   font-weight: 500;
 }
 
+#imagem_loc {
+  width: 100px;
+}
+
 input {
   border: none;
   outline: none;
