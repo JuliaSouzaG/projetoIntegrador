@@ -57,10 +57,14 @@
         </div>
 
         <div class="action-buttons">
-          <button class="action-button audio-action" (click)="handleAudioAction()">
+          <audio controls>
+            <source [src]="pontoSelecionado.audio" type="audio/ogg">
+            Your browser does not support the audio tag.
+          </audio>
+          <!-- <button class="action-button audio-action" (click)="handleAudioAction()">
             <span class="icon me-2"><i class="bi bi-volume-up"></i></span>
             <span>Audioguia</span>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
